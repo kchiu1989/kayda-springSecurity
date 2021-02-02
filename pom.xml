@@ -8,6 +8,14 @@
   <properties>
   	<kaydaSecurity.core.version>1.0.0-SNAPSHOT</kaydaSecurity.core.version>
   </properties>
+
+  <!-- https://docs.spring.io/platform/docs/Brussels-SR17/reference/htmlsingle/#getting-started -->
+    <modules>
+        <module>kaydaSecurity-commonModel</module>
+        <module>kaydaSecurity-core</module>
+        <module>kaydaSecurity-phoneApp</module>
+        <module>kaydaSecurity-webBrowser</module>
+    </modules>
   
   <dependencyManagement>
         <dependencies>
@@ -42,11 +50,5 @@
     		</plugin>
     	</plugins>
     </build>
-    <!-- https://docs.spring.io/platform/docs/Brussels-SR17/reference/htmlsingle/#getting-started -->
-    <modules>
-    	<module>kaydaSecurity-commonModel</module>
-    	<module>kaydaSecurity-core</module>
-    	<module>kaydaSecurity-phoneApp</module>
-    	<module>kaydaSecurity-webBrowser</module>
-    </modules>
+    
 </project>
