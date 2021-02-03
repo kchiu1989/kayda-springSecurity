@@ -1,4 +1,6 @@
-package com.kayda.security.property;
+package com.kayda.security.common.property.browser;
+
+import com.kayda.security.property.LoginType;
 
 public class BrowserProperties {
 	
