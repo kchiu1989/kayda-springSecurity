@@ -6,6 +6,8 @@ import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.kayda.security.property.SecurityMultiProperties;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.connect.web.HttpSessionSessionStrategy;
 import org.springframework.social.connect.web.SessionStrategy;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,9 @@ import com.kayda.security.validateCode.entity.ValidateCodeImage;
 
 @RestController
 public class ValidateCodeController {
+
+	@Autowired
+	private SecurityMultiProperties securityMultiProperties;
 	
 	private static final String SESSION_VALIDATE_CODE_IMAGE_KEY = "SESSION_VALIDATE_CODE_IMAGE_KEY";
 	

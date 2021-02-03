@@ -9,20 +9,32 @@ import com.kayda.security.validateCode.entity.ValidateCodeImage;
 
 public class ValidateCodeImageUtil {
     // 图片的宽度。
-    private static int width = 160;
+    private static final int defaultWidth = 160;
     // 图片的高度。
-    private static int height = 40;
+    private static final int defaultHeight = 40;
     // 验证码字符个数
-    private static int codeCount = 5;
+    private static final int defaultCodeCount = 5;
     // 验证码干扰线数
-    private static int lineCount = 150;
+    private static final int defaultLineCount = 150;
 
 
     private static char[] codeSequence = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
             'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
             'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
-    public static ValidateCodeImage createBufferedImage() {
+    public static ValidateCodeImage createBufferedImage(Integer width,Integer height,Integer codeCount) {
+        if (width==null){
+            width=defaultWidth;
+        }
+
+        if (height==null){
+            height=defaultHeight;
+        }
+
+        if (codeCount==null){
+            codeCount=defaultCodeCount;
+        }
+
         int x = 0, fontHeight = 0, codeY = 0;
         int red = 0, green = 0, blue = 0;
 
@@ -55,7 +67,7 @@ public class ValidateCodeImageUtil {
 
         g.setFont(font);
 
-        for (int i = 0; i < lineCount; i++) {
+        for (int i = 0; i < defaultLineCount; i++) {
             // 设置随机开始和结束坐标
             int xs = random.nextInt(width);//x坐标开始
             int ys = random.nextInt(height);//y坐标开始
