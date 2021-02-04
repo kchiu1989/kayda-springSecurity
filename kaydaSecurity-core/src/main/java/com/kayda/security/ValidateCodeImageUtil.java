@@ -14,6 +14,8 @@ public class ValidateCodeImageUtil {
     private static final int defaultHeight = 40;
     // 验证码字符个数
     private static final int defaultCodeCount = 5;
+
+    private static final int defaultExpireIn = 60;
     // 验证码干扰线数
     private static final int defaultLineCount = 150;
 
@@ -22,7 +24,7 @@ public class ValidateCodeImageUtil {
             'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
             'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
-    public static ValidateCodeImage createBufferedImage(Integer width,Integer height,Integer codeCount) {
+    public static ValidateCodeImage createBufferedImage(Integer width,Integer height,Integer codeCount,Integer expireIn) {
         if (width==null){
             width=defaultWidth;
         }
@@ -33,6 +35,10 @@ public class ValidateCodeImageUtil {
 
         if (codeCount==null){
             codeCount=defaultCodeCount;
+        }
+
+        if(expireIn==null){
+            expireIn = defaultExpireIn;
         }
 
         int x = 0, fontHeight = 0, codeY = 0;
